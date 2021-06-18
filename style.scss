@@ -1,0 +1,160 @@
+/*
+Theme Name: Watermelon
+Theme URI:
+Author: karmatosed
+Author URI: https://tammielister.com
+Description: Square fruit are tasty and so are block based themes
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: watermelon
+Tags: translation-ready
+*/
+
+:root {
+	// Colors.
+	--w-color-seed-black: #111111;
+	--w-color-cream-surround: #fbfeef;
+	--w-color-melon-green: #9Df9bf;
+	--w-color-melon-red: #ec9aa2;
+	--w-color-melon-mint: #ec9aa2;
+    --w-color-melon-pink: #ffe7e9;
+    --w-color-melon-grey: #eeeeee;
+
+	// Cheap trick/very basic dark mode.
+	@media (prefers-color-scheme: dark) {
+	}
+
+	// Other.
+	--w-font-size-tiny: 12px;
+	--w-font-size-small: 14px;
+	--w-font-size-normal: 18px;
+	--w-font-size-medium: 24px;
+	--w-font-size-large: 48px;
+	--w-font-size-huge: 96px;
+	--w-font-size-giant: 114px;
+
+	--w-border-width: 2px;
+	--w-transition-fast: .15s;
+    --w-border-radius: 2px;
+    
+    --w-site-width: 1280px;
+    --w-content-width: 960px;
+
+    --w-font-stack: 'Inter', sans-serif;
+}
+
+$grid-unit: 8px;
+$grid-unit-05: $grid-unit * 0.5;
+$grid-unit-10: $grid-unit;
+$grid-unit-15: $grid-unit * 1.5;
+$grid-unit-20: $grid-unit * 2;
+$grid-unit-30: $grid-unit * 3;
+$grid-unit-40: $grid-unit * 4;
+$grid-unit-60: $grid-unit * 6;
+$grid-unit-100: $grid-unit * 100;
+$grid-unit-120: $grid-unit * 12;
+
+// Responsive mixin, mobile-first.
+@mixin break-sm() {
+	@media (min-width: #{ (480px) }) {
+		@content;
+	}
+}
+
+@mixin break-md() {
+	@media (min-width: #{ (640px) }) {
+		@content;
+	}
+}
+
+@mixin break-lg() {
+	@media (min-width: #{ (960px) }) {
+		@content;
+	}
+}
+
+@mixin break-xl() {
+	@media (min-width: #{ (1280px) }) {
+		@content;
+	}
+}
+
+
+/**
+ * Base styles and resets.
+ */
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	padding: $grid-unit-20;
+}
+
+body {
+	margin: 0;
+	color: var(--w-color-seed-black);
+	font-family: var(--w-font-stack);
+	line-height: 2;
+}
+
+a {
+	text-decoration: none;
+	transition: all var(--w-transition-fast) ease;
+	box-shadow: 0 2px 0 0 currentColor, inset 0 -2px 0 0 currentColor;
+
+	&:focus {
+		outline: 2px solid transparent;
+		box-shadow: 0 0 0 var(--w-border-width);
+		position: relative;
+		z-index: 2;
+		border-radius: 0.4px;
+	}
+
+	&:hover {
+		box-shadow: 0 4px 0 0 currentColor, inset 0 -2px 0 0 currentColor;
+	}
+
+	.has-vertical-text & {
+		box-shadow: -2px 0 0 0 currentColor, inset 2px 0 0 0 currentColor;
+
+		&:hover {
+			box-shadow: -4px 0 0 0 currentColor, inset 2px 0 0 0 currentColor;
+		}
+
+		&:focus {
+			box-shadow: 0 0 0 var(--w-border-width) currentColor;
+		}
+	}
+}
+
+figure {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	border-radius: var(--w-border-radius);
+}
+
+::placeholder {
+	color: rgba(var(--w-color-seed-black), .8);
+}
+
+/* spacing on smaller screens */
+@media ( max-width: 600px ) {
+	main {
+		padding: 32px;
+	}
+}
+
+@media ( max-width: 1200px ) { 
+    main {
+		padding: 0 32px;
+    }
+}

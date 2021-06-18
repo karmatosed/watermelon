@@ -1,0 +1,95 @@
+/*
+Theme Name: Watermelon
+Theme URI:
+Author: karmatosed
+Author URI: https://tammielister.com
+Description: Square fruit are tasty and so are block based themes
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: watermelon
+Tags: translation-ready
+*/
+:root {
+  --w-color-seed-black: #111111;
+  --w-color-cream-surround: #fbfeef;
+  --w-color-melon-green: #9Df9bf;
+  --w-color-melon-red: #ec9aa2;
+  --w-color-melon-mint: #ec9aa2;
+  --w-color-melon-pink: #ffe7e9;
+  --w-color-melon-grey: #eeeeee;
+  --w-font-size-tiny: 12px;
+  --w-font-size-small: 14px;
+  --w-font-size-normal: 18px;
+  --w-font-size-medium: 24px;
+  --w-font-size-large: 48px;
+  --w-font-size-huge: 96px;
+  --w-font-size-giant: 114px;
+  --w-border-width: 2px;
+  --w-transition-fast: .15s;
+  --w-border-radius: 2px;
+  --w-site-width: 1280px;
+  --w-content-width: 960px;
+  --w-font-stack: 'Inter', sans-serif; }
+
+/**
+ * Base styles and resets.
+ */
+* {
+  box-sizing: border-box; }
+
+html {
+  padding: 16px; }
+
+body {
+  margin: 0;
+  color: var(--w-color-seed-black);
+  font-family: var(--w-font-stack);
+  line-height: 2; }
+
+a {
+  text-decoration: none;
+  transition: all var(--w-transition-fast) ease;
+  box-shadow: 0 2px 0 0 currentColor, inset 0 -2px 0 0 currentColor; }
+  a:focus {
+    outline: 2px solid transparent;
+    box-shadow: 0 0 0 var(--w-border-width);
+    position: relative;
+    z-index: 2;
+    border-radius: 0.4px; }
+  a:hover {
+    box-shadow: 0 4px 0 0 currentColor, inset 0 -2px 0 0 currentColor; }
+  .has-vertical-text a {
+    box-shadow: -2px 0 0 0 currentColor, inset 2px 0 0 0 currentColor; }
+    .has-vertical-text a:hover {
+      box-shadow: -4px 0 0 0 currentColor, inset 2px 0 0 0 currentColor; }
+    .has-vertical-text a:focus {
+      box-shadow: 0 0 0 var(--w-border-width) currentColor; }
+
+figure {
+  margin-left: 0;
+  margin-right: 0; }
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--w-border-radius); }
+
+::-moz-placeholder {
+  color: rgba(var(--w-color-seed-black), 0.8); }
+
+:-ms-input-placeholder {
+  color: rgba(var(--w-color-seed-black), 0.8); }
+
+::placeholder {
+  color: rgba(var(--w-color-seed-black), 0.8); }
+
+/* spacing on smaller screens */
+@media (max-width: 600px) {
+  main {
+    padding: 32px; } }
+
+@media (max-width: 1200px) {
+  main {
+    padding: 0 32px; } }
